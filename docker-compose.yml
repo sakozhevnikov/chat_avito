@@ -1,23 +1,14 @@
-version: '3.9'
-
 services:
-
-  postgres:
+  db:
     image: postgres:16
-    container_name: avito_bot_postgres
-
+    restart: always
     environment:
-      POSTGRES_DB: avito_bot
-      POSTGRES_USER: avito_user
-      POSTGRES_PASSWORD: avito_password
-
+      POSTGRES_USER: bot_user
+      POSTGRES_PASSWORD: bot_password
+      POSTGRES_DB: bot_db
     ports:
       - "5432:5432"
-
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
-    restart: unless-stopped
-
 volumes:
   postgres_data:
