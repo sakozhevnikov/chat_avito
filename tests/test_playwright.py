@@ -8,12 +8,23 @@ with sync_playwright() as p:
     )
 
     page = browser.new_page()
-
     page.goto("https://www.avito.ru")
 
-    print("TITLE:", page.title())
-    print("URL:", page.url)
+    page.goto(
+    "https://www.avito.ru",
+    wait_until="domcontentloaded",
+    timeout=60000
+    )
 
-    input("Just observing...")
+    page.wait_for_timeout(3000)
+
+    print("TITLE:", page.title())
+
+    # Пример работы с элементом
+    login_button = page.locator("text=Вход и регистрация")
+
+    print("Login button visible:", login_button.is_visible())
+
+    input("Press Enter to close...")
 
     browser.close()
