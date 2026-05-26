@@ -46,3 +46,5 @@ data/private/
 # Python cache
 .pytest_cache/
 .mypy_cache/
+
+cookies.json

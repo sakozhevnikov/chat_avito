@@ -12,6 +12,7 @@ python-dotenv
 
 # Browser automation
 playwright
+playwright-stealth
 
 # HTTP requests
 httpx
