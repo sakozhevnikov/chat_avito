@@ -1,0 +1,23 @@
+# Web framework
+fastapi
+uvicorn
+
+# Database
+sqlalchemy
+psycopg2-binary
+asyncpg
+
+# Environment variables
+python-dotenv
+
+# Browser automation
+playwright
+
+# HTTP requests
+httpx
+
+# Validation
+pydantic
+
+# Logging
+loguru
