@@ -7,10 +7,11 @@ docker compose up
 '''
 
 В командной строке в VS code
+docker compose up -d      
+docker ps     (Нужно увидеть avito_bot_postgres)
 python -m venv venv            
 .\venv\Scripts\Activate.ps1      
 venv\Scripts\activate   
 pip install -r requirements.txt       
-playwright install                 
-docker compose up -d      
-docker ps                          
+playwright install           
+Запустить нужный файл. Например "python tests/test_playwright.py"                              
