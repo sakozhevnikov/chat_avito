@@ -1,0 +1,16 @@
+install docker (установите docker)
+
+'''
+перенос на основной ПК
+git clone ...
+docker compose up
+'''
+
+В командной строке в VS code
+python -m venv venv            
+.\venv\Scripts\Activate.ps1      
+venv\Scripts\activate   
+pip install -r requirements.txt       
+playwright install                 
+docker compose up -d      
+docker ps                          
