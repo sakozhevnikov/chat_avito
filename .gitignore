@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+
+# Environment variables
+.env
+
+# Database
+*.db
+
+# Logs
+logs/
+*.log
+
+# Playwright
+playwright_storage/
+playwright/.auth/
+
+# Models
+models/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+postgres_data/
+
+# Temporary files
+tmp/
+temp/
+
+# Private project data
+data/private/
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
