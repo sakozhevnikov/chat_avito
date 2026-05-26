@@ -2,14 +2,18 @@ from playwright.sync_api import sync_playwright
 
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+    browser = p.chromium.launch(
+        headless=False,
+        slow_mo=100
+    )
 
     page = browser.new_page()
 
     page.goto("https://www.avito.ru")
 
-    print(page.title())
+    print("TITLE:", page.title())
+    print("URL:", page.url)
 
-    input("Press Enter to close browser...")
+    input("Just observing...")
 
     browser.close()
