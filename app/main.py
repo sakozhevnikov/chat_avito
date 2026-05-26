@@ -1,10 +1,14 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types
+from aiogram.client.session.aiohttp import AiohttpSession
 from app.core.config import settings
 from app.bot.orchestrator import process_message
-from app.db.session import init_db
 
-bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
+# Поменяй на свой смешанный порт из Hiddify
+MIXED_PORT = 12334
+
+session = AiohttpSession(proxy=f"http://127.0.0.1:{MIXED_PORT}")
+bot = Bot(token=settings.TELEGRAM_BOT_TOKEN, session=session)
 dp = Dispatcher()
 
 @dp.message()
@@ -13,9 +17,7 @@ async def handle_message(message: types.Message):
     await message.answer(reply)
 
 async def main():
-    # Создаём таблицы в БД (если ещё не созданы)
-    # await init_db()  # временно отключено, пока не настроим PostgreSQL
-    print("Бот запущен...")
+    print(f"Бот запущен через Hiddify (порт {MIXED_PORT})...")
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
